@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Lab 6 - CSS Selectors</title>
+    <style>
+        em { color : fuchsia; }             /** Anything emboldened **/
+        p em {color : midnightblue; }               /** Anything emboldened inside a paragraph **/
+        body > footer { color : purple; }    /** Any footer that is a direct child of body **/
+        h1 + p {color : teal; }             /** Any paragraph that is a direct sibling of a heading 1 **/
+        h1 ~ p {color : yellow; }           /** Any paragraph that is a younger sibling of a heading 1 **/
+        p.interactive {color: navy; }       /** Any paragraph that has a class of interactive **/
+        p.interactive:hover {color: lime;}  /** Any paragraph that has a class of interactive and hovered over **/
+        #special {color: red;}              /** An element with an id of special **/
+
+        article, header, nav, ul, li, footer {  /** Any articles, headers, navs, uls, lis and footers **/
+            margin:1em;
+            padding:1em;
+            outline:4px dashed black;
+        }
+        a {                                     /** Any links **/
+            color: blue;
+        }
+
+        nav ul{                                 /** Any unordered list that is a child of a nav **/
+            list-style:none;
+        }
+
+        li:first-child {background-color: #0094ff;}         /** First-child list items **/
+        li:last-child {background-color: #0094ff;}          /** Last-child list items **/
+        li:nth-child(3) {background-color: #0094ff;}        /** Third-child list items **/
+        li:nth-child(odd) {background-color: #b6ff00;}      /** Odd-children list items **/
+        li:nth-child(even) {background-color: #1d1bc6;}     /** Even-children list items **/
+        li:not(:first-child) {background-color: #ff0000;}   /** Everything but the first-child list item **/
+
+        p:first-of-type {background-color: #00ff00;}        /** The first paragraph **/
+        p:last-of-type {background-color: #0000ff;}         /** The last paragraph **/
+
+        label[for="name"] { background-color: aquamarine; }    /** A label with a for attribute of name **/
+        input[type="email"] { background-color: hotpink; }     /** An input with a type attribute of email **/
+
+    </style>
+</head>
+<body>
+    <h1> A <em>heading</em></h1>
+    <p>A paragraph <em>with emphasis</em></p>
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="#item1">Item 1</a></li>
+                <li><a href="#item2">Item 2</a></li>
+                <li><a href="#item3">Item 3</a></li>
+                <li><a href="#item4">Item 4</a></li>
+                <li><a href="#item5">Item 5</a></li>
+                <li><a href="#item6">Item 6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <h1>Article</h1>
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <footer>Article footer</footer>
+    </article>
+    <footer>
+        Body footer
+    </footer>
+    <p class="interactive">hover me</p>
+    <article>
+        <h1>Article</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <blockquote>Quote</blockquote>
+        <p id="special">Paragraph 3</p>
+        <footer>Article footer</footer>
+    </article>
+    <article>
+        <p><a href="#news1">Jump to New content 1</a></p>
+        <p><a href="#news2">Jump to New content 2</a></p>
+        <p id="news1">New content 1</p>
+        <p id="news2">New content 2</p>
+    </article>
+    <form>
+        <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+        </fieldset>
+        <fieldset>
+            <label for="email">Email: </label>
+            <input type="email" name="email">
+        </fieldset>
+    </form>
+    <footer>Body footer</footer>
+</body>
+</html>
